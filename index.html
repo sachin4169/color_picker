@@ -40,10 +40,18 @@
        <div class="box" id="blue"></div>
    </div>
     <script>
-        $(document).on("click", ".box", function(){
-            console.log(this.id);
-            $("body").css({"background":`${this.id}`})
-        })
+        // $(document).on("click", ".box", function(){
+        //     console.log(this.id);
+        //     $("body").css({"background":`${this.id}`})
+        // })
+        var x = document.getElementsByClassName("box").length;
+        console.log(x);
+        for (let i = 0; i < x; i++) {
+            document.getElementsByClassName("box")[i].addEventListener("click", function(){
+                console.log(this.id)
+                document.querySelector("body").style = `background-color:${this.id}`;
+            })
+        }
     </script>
 </body>
 </html>
